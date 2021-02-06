@@ -1,12 +1,15 @@
 {
   "name": "typescript-node-boilerplate",
+  "author": "Claudio Carneiro",
+  "license": "GPL-3.0",
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "node build/index.js",
-    "build": "babel src --verbose --out-dir build --no-copy-ignored",
+    "build": "babel src --source-maps --copy-files --out-dir build",
+    "clean": "rm -rf build/ && mkdir -p build",
     "dev": "nodemon --watch 'src/' --exec 'ts-node src/index.ts' -e ts",
-    "test": "jest"
+    "start": "node build/index.js",
+    "test": "jest --detectOpenHandles --onlyChanged --watch src"
   },
   "keywords": [],
   "author": "",
@@ -29,5 +32,25 @@
     "@types/jest": "^26.0.20",
     "jest": "^26.6.3",
     "ts-jest": "^26.5.0"
+  },
+  "babel": {
+    "sourceMaps": "inline",
+    "retainLines": true,
+    "extensions": [
+      ".ts",
+      ".js"
+    ],
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ],
+      "@babel/preset-typescript"
+    ],
+    "ignore": []
   }
 }
