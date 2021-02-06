@@ -1,7 +1,8 @@
-npm i typescript -D
-./node_modules/.bin/tsc --init
+- pip install pre-commit
+- npm i nodemon -D
+- npm i typescript -D
+- npm i -D ts-node
+- npm i -D @types/node
+- npx tsc --init
 
-- pre-commit
-  npm i nodemon -D
-  npm i -D ts-node
-  npm i -D @types/node
+npm i jest ts-jest @types/jest
