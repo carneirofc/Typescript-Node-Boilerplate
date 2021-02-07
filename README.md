@@ -1,5 +1,5 @@
 # Typescript boilerplate with node
-
+For a complete example check https://github.com/microsoft/TypeScript-Node-Starter
 ## Setup
 
 Install node packages
