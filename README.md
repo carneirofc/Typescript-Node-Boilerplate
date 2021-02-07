@@ -1,8 +1,36 @@
-- pip install pre-commit
-- npm i nodemon -D
-- npm i typescript -D
-- npm i -D ts-node
-- npm i -D @types/node
-- npx tsc --init
+# Typescript boilerplate with node
 
-npm i jest ts-jest @types/jest
+## Setup
+
+Install node packages
+
+```bash
+npm i
+```
+
+Pre-commit is an extremely useful tool
+
+```bash
+pip install pre-commit
+pre-commit install
+```
+
+## Debug
+
+VSCode `.vscode/launch.json`
+
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Node: Nodemon",
+      "processId": "${command:PickProcess}",
+      "restart": true,
+      "protocol": "inspector"
+    }
+  ]
+}
+```
